@@ -28,8 +28,8 @@ def biased_rolls(prob_list, s, n):
 
     for i in range(n):
         probability = random.random()
-        count = 0 #keeps track of the sum of  probabilities.
-        count_2 = 0 #keeps track of the sum of probabilities +1
+        count = 0 # keeps track of the sum of  probabilities.
+        count_2 = 0 # keeps track of the sum of probabilities +1
         sum = 1
         #checks for base case if 0 <=x < prob_list[0]
         if probability <= prob_list[0] and probability > 0:
@@ -46,17 +46,18 @@ def biased_rolls(prob_list, s, n):
         except:
             pass
 
-
-
-
-
-
-
     # return the resulting rolls
     return rolls
 
-#returns a
+
 def dice_side(prob_list):
+    """ Description: get a list of number of Dice sides.
+                     Since this list have same indexes and length as prob_list,
+                     I can use this list with prob_list to map a probablitiy
+                     to a side number.
+        argument: the list of probabilities. Ex.[1/4,1/12...etc]
+        returns: a list of from [1,2,3...m]; all the number of side of the dice.
+                 """
     num = 1
     num_list= []
 
@@ -96,6 +97,8 @@ def draw_histogram(m, rolls, width):
 
 #this is function returns the side with the highest frequency. It is needed for scaling the Histogram
 def most_frequency(rolls):
+
+
     frequency = 0
     for i in rolls:
         current_frequency = rolls.count(i)
